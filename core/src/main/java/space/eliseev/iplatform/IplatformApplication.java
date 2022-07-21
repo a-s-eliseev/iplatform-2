@@ -21,7 +21,6 @@ import space.eliseev.iplatform.config.StockConfig;
 public class IplatformApplication {
 
     public static void main(String[] args) {
-        new StockConfig().getApiList();
         SpringApplication.run(IplatformApplication.class, args);
     }
 
