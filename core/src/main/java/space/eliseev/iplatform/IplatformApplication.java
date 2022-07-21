@@ -12,6 +12,7 @@ package space.eliseev.iplatform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import space.eliseev.iplatform.config.StockConfig;
 
 /**
  * @author <a href="mailto:a.s.eliseev@yandex.ru">Aleksandr Eliseev</a>
@@ -20,6 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class IplatformApplication {
 
     public static void main(String[] args) {
+        new StockConfig().getApiList();
         SpringApplication.run(IplatformApplication.class, args);
     }
 
