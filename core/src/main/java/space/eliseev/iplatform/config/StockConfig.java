@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StockConfig {
     public static final List<String> urls =
-            new ApiInfoYMLFileParserImpl().parse("D:\\IPlatform\\core\\src\\main\\resources\\api-info.yaml");
+            new ApiInfoYMLFileParserImpl().parse("D:\\IPlatform\\core\\src\\main\\resources\\api-info.yml");
 
     private StockConfig() {
     }
