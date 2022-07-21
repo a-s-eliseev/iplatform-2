@@ -15,7 +15,7 @@ public class YMLFileParserImpl implements FileParser {
         try (InputStream input = new FileInputStream(file);) {
             Yaml yaml = new Yaml();
             map = yaml.load(input);
-            return map.get("non-financial-data");
+            return map.get("non-financial-urls");
         } catch(java.io.IOException e ) {
             throw new RuntimeException(e);
         }

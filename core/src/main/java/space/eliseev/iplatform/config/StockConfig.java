@@ -11,7 +11,7 @@ public class StockConfig {
     private List<String> urls;
     Yaml yaml = new Yaml();
     public List<String> getApiList() {
-        List<String> strings = new YMLFileParserImpl().parse("src/main/resourses/api_info.yml");
+        List<String> strings = new YMLFileParserImpl().parse("D:\\IPlatform\\core\\src\\main\\resources\\api-info.yaml");
         System.out.println(strings);
         return strings;
     }

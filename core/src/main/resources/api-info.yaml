@@ -1,0 +1,3 @@
+non-financial-urls:
+  - https://api.geotree.ru/search.php?level=4
+  - https://api.geotree.ru/search.php?level=5
