@@ -13,6 +13,8 @@ package space.eliseev.iplatform;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 /**
  * @author <a href="mailto:a.s.eliseev@yandex.ru">Aleksandr Eliseev</a>
  */
