@@ -15,7 +15,7 @@ import space.eliseev.iplatform.service.FileUploadService;
 @RequiredArgsConstructor
 public class FileUploadController {
 
-    private FileUploadService fileUploadService;
+    private final FileUploadService fileUploadService;
 
     @PostMapping("/upload")
     public ResponseData uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
