@@ -11,7 +11,7 @@ import space.eliseev.iplatform.repository.FileUploadRepository;
 @RequiredArgsConstructor
 public class FileUploadServiceImpl implements FileUploadService {
 
-    private FileUploadRepository fileUploadRepository;
+    private final FileUploadRepository fileUploadRepository;
 
     @Override
     public FileUpload saveFile(MultipartFile file) throws Exception {
