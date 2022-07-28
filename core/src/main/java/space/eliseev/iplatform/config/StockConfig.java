@@ -12,7 +12,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "config")
 @Getter
 @Setter
-@PropertySource(value = "file:D:/IPlatform/core/src/main/resources/api-info.yml", factory = YamlPropertySourceFactory.class)
+@PropertySource(value = "classpath:api-info.yml", factory = YamlPropertySourceFactory.class)
 public class StockConfig {
     private List<String> urls;
 }

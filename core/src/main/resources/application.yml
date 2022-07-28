@@ -1,10 +1,5 @@
 spring:
   application:
     name: i-platform
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/iplatform
-    username: postgres
-    password: postgres
   liquibase:
     enabled: false
