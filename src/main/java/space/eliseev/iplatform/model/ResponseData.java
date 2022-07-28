@@ -1,5 +1,6 @@
 package space.eliseev.iplatform.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -12,11 +12,12 @@ package space.eliseev.iplatform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @author <a href="mailto:a.s.eliseev@yandex.ru">Aleksandr Eliseev</a>
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class IplatformApplication {
 
     public static void main(String[] args) {

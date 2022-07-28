@@ -12,7 +12,7 @@ import javax.persistence.Lob;
 @Entity
 @Data
 @NoArgsConstructor
-public class Attachment {
+public class FileUpload {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -26,7 +26,7 @@ public class Attachment {
     @Lob
     private byte[] data;
 
-    public Attachment(String fileName, String fileType, byte[] data) {
+    public FileUpload(String fileName, String fileType, byte[] data) {
         this.fileName = fileName;
         this.fileType = fileType;
         this.data = data;

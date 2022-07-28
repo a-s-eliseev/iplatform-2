@@ -1,4 +1,5 @@
 spring:
+
   application:
     name: i-platform
   servlet:
@@ -7,6 +8,15 @@ spring:
       file-size-threshold: 2KB
       max-file-size: 200MB
       max-request-size: 215MB
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: testdb
+
+
+
+
 
 
 
