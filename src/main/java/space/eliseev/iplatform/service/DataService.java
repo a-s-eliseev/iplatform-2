@@ -1,4 +1,4 @@
-package space.eliseev.iplatform.services;
+package space.eliseev.iplatform.service;
 
 
 public interface DataService {

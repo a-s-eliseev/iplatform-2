@@ -1,11 +1,11 @@
-package space.eliseev.iplatform.controllers;
+package space.eliseev.iplatform.controller;
 
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import space.eliseev.iplatform.services.DataService;
+import space.eliseev.iplatform.service.DataService;
 
 @RequiredArgsConstructor
 @RestController

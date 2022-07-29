@@ -1,6 +1,7 @@
-package space.eliseev.iplatform.services;
+package space.eliseev.iplatform.service;
 
 import org.springframework.stereotype.Service;
+import space.eliseev.iplatform.service.DataService;
 
 @Service
 public class DataServiceImpl implements DataService {
