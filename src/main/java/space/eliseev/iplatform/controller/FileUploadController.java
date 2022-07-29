@@ -10,6 +10,8 @@ import space.eliseev.iplatform.entity.FileUpload;
 import space.eliseev.iplatform.model.ResponseData;
 import space.eliseev.iplatform.service.FileUploadService;
 
+import static space.eliseev.iplatform.controller.DemoPaths.UPLOAD_FILE;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class FileUploadController {
 
     private final FileUploadService fileUploadService;
 
-    @PostMapping("/upload")
+    @PostMapping(UPLOAD_FILE)
     public ResponseData uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
         FileUpload fileUpload = null;
         String downloadURL = "";
