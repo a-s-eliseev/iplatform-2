@@ -1,6 +1,7 @@
 package space.eliseev.iplatform.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ public class FileUploadController {
 
     private final FileUploadService fileUploadService;
 
-    @PostMapping(UPLOAD_FILE)
+    @PostMapping(value = UPLOAD_FILE,consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseData uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
         FileUpload fileUpload = null;
         String downloadURL = "";

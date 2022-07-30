@@ -1,5 +1,4 @@
 spring:
-
   application:
     name: i-platform
   servlet:
@@ -13,6 +12,10 @@ spring:
       host: localhost
       port: 27017
       database: testdb
+springdoc:
+  api-docs:
+    enabled: true
+    path: /docs
 
 
 
