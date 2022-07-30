@@ -3,3 +3,8 @@ spring:
     name: i-platform
   liquibase:
     enabled: false
+  data:
+    mongodb:
+      database: Test_db
+      port: 27017
+      host: localhost
