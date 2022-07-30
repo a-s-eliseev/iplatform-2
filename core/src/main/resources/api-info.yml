@@ -1,0 +1,12 @@
+config:
+  urls:
+    - https://api.coindesk.com/v1/bpi/currentprice.json
+    - https://api.ipify.org?format=json
+    - https://pokeapi.co/api/v2/pokemon/ditto
+    - https://pokeapi.co/api/v2/pokemon/bulbasaur
+    - https://reqres.in/api/list_users
+    - https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=BIPCAOE1GUNFR0H6
+    - https://currate.ru/api/?get=currency_list&key=ab37f648c9112c1f60f15b0e5a491713
+    - https://currate.ru/api/?get=rates&pairs=EURRUB&key=ab37f648c9112c1f60f15b0e5a491713
+    - https://currate.ru/api/?get=rates&pairs=USDRUB&key=ab37f648c9112c1f60f15b0e5a491713
+    - https://currate.ru/api/?get=rates&pairs=EURUSD&key=ab37f648c9112c1f60f15b0e5a491713
