@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.net.URI;
 
-@FeignClient(name = "data-service", url = "https://")
-public interface DataLoadClient {
+@FeignClient(name = "baseEntityClient", url = "https://")
+public interface BaseEntityClient {
     @GetMapping(produces = "application/json; charset=UTF-8")
-    ResponseEntity<Object> getBaseEntityByUrl(URI baseUrl);
+    ResponseEntity<String> getBaseEntityByUrl(URI baseUrl);
 }
