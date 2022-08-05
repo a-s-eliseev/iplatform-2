@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import space.eliseev.iplatform.clients.BaseEntityClient;
 import space.eliseev.iplatform.config.StockConfig;
@@ -28,8 +29,9 @@ public class BaseEntityServiceImpl implements BaseEntityService {
         try {
             if ((id >= 0) && (id < stockConfig.getUrls().size())) {
                 URI determinedBasePathUri = URI.create(stockConfig.getUrls().get(id));
-                HttpHeaders headers = baseEntityClient.getBaseEntityByUrl(determinedBasePathUri).getHeaders();
-                String json = baseEntityClient.getBaseEntityByUrl(determinedBasePathUri).getBody();
+                ResponseEntity<String> response = baseEntityClient.getBaseEntityByUrl(determinedBasePathUri);
+                HttpHeaders headers = response.getHeaders();
+                String json = response.getBody();
                 BaseEntity baseEntity = new BaseEntity(headers.getDate(), convertStringToObject(json)
                         , determinedBasePathUri.toString());
                 return Optional.of(baseEntity);

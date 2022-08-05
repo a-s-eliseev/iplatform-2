@@ -31,7 +31,7 @@ public class BaseEntityController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping(value = "/manual/get/{id}")
+    @GetMapping(value = "/manual/entities/{id}")
     public ResponseEntity<BaseEntity> getData(@PathVariable String id) throws JsonProcessingException {
         return new ResponseEntity<>(baseEntityService.getDataByStockConfigId(Integer.valueOf(id))
                 .orElse(null), HttpStatus.OK);
