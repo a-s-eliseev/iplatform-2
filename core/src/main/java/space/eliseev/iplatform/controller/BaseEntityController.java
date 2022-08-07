@@ -33,7 +33,7 @@ public class BaseEntityController {
 
     @GetMapping(value = "/manual/entities/{id}")
     public ResponseEntity<BaseEntity> getData(@PathVariable String id) {
-        Optional<BaseEntity> entity = baseEntityService.getDataByStockConfigId(Integer.valueOf(id));
+        Optional<BaseEntity> entity = baseEntityService.getDataByStockConfigId(id);
         return entity
                 .map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.BAD_REQUEST));

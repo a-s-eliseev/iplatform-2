@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface BaseEntityService {
 
-   Optional<BaseEntity> getDataByStockConfigId(Integer id);
+   Optional<BaseEntity> getDataByStockConfigId(String id);
 
 }
