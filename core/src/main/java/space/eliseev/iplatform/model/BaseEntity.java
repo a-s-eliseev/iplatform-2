@@ -17,4 +17,10 @@ public class BaseEntity {
     private Long creationTime;
     private Object data;
     private String producerAPI;
+
+    public BaseEntity(Long creationTime, Object data, String producerAPI) {
+        this.creationTime = creationTime;
+        this.data = data;
+        this.producerAPI = producerAPI;
+    }
 }
