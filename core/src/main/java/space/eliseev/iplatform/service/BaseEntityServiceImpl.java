@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import space.eliseev.iplatform.clients.BaseEntityClient;
 import space.eliseev.iplatform.config.StockConfig;
-import space.eliseev.iplatform.exception.ProducerApiNotFoundException;
 import space.eliseev.iplatform.model.BaseEntity;
 
 import java.net.URI;
@@ -23,36 +22,30 @@ public class BaseEntityServiceImpl implements BaseEntityService {
 
     private final StockConfig stockConfig;
     private final BaseEntityClient baseEntityClient;
+    private static final String ERROR = "Error converting JSON string to Java object. "
+            + "The JSON string to be converted is: ";
 
     @Override
-    public Optional<BaseEntity> getDataByStockConfigId(@NonNull Integer id) throws JsonProcessingException {
-        try {
+    public Optional<BaseEntity> getDataByStockConfigId(@NonNull Integer id) {
+
             if ((id >= 0) && (id < stockConfig.getUrls().size())) {
                 URI determinedBasePathUri = URI.create(stockConfig.getUrls().get(id));
                 ResponseEntity<String> response = baseEntityClient.getBaseEntityByUrl(determinedBasePathUri);
                 HttpHeaders headers = response.getHeaders();
                 String json = response.getBody();
-                BaseEntity baseEntity = new BaseEntity(headers.getDate(), convertStringToObject(json)
-                        , determinedBasePathUri.toString());
-                return Optional.of(baseEntity);
-            } else {
-                throw new ProducerApiNotFoundException();
+                return Optional.of(new BaseEntity(headers.getDate(), convertStringToObject(json).orElse(null)
+                        , determinedBasePathUri.toString()));
             }
-        } catch (ProducerApiNotFoundException e) {
-            String error = "Producer API not defined";
-            log.error(error);
-            throw e;
-        }
+        return Optional.empty();
     }
-    public Object convertStringToObject(String json) throws JsonProcessingException {
+    public Optional<Object> convertStringToObject(String json) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(json, Object.class);
+            return Optional.of(objectMapper.readValue(json, Object.class));
         } catch (JsonProcessingException e) {
-            String error = "Error converting JSON string to Java object";
-            log.error(error);
-            throw e;
+            log.error(ERROR + "\n" + json);
         }
+        return Optional.empty();
     }
 
 }
