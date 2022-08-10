@@ -6,10 +6,13 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import space.eliseev.iplatform.entity.FileUpload;
 import space.eliseev.iplatform.repository.FileUploadRepository;
+import space.eliseev.iplatform.service.factory.XlsxFileParserFactory;
 
 @Service
 @RequiredArgsConstructor
 public class FileUploadServiceImpl implements FileUploadService {
+
+    private final XlsxFileParserFactory fp;
 
     private final FileUploadRepository fileUploadRepository;
 
