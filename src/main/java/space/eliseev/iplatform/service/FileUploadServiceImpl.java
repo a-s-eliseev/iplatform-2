@@ -5,12 +5,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import space.eliseev.iplatform.entity.FileUpload;
+import space.eliseev.iplatform.repository.BaseEntityRepository;
 import space.eliseev.iplatform.repository.FileUploadRepository;
 
 @Service
 @RequiredArgsConstructor
 public class FileUploadServiceImpl implements FileUploadService {
 
+    private final BaseEntityRepository baseEntityRepository;
     private final FileUploadRepository fileUploadRepository;
 
     @Override
