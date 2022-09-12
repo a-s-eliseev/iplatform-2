@@ -21,6 +21,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.5.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -31,5 +36,29 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<db-url>jdbc:postgresql://localhost:5432/iplatform_core</db-url>
+				<db-username>postgres</db-username>
+				<db-password>postgres</db-password>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>ref</id>
+			<properties>
+				<db-url>jdbc:postgresql://localhost:5432/iplatform_core</db-url>
+				<db-username>postgres</db-username>
+				<db-password>root</db-password>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
 
 </project>
