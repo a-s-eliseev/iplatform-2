@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: iplatform
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: @db-username@
+    password: @db-password@
+    url: @db-url@
+  jpa:
+    hibernate:
+      ddl-auto: validate
