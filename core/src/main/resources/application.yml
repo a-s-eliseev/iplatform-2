@@ -1,6 +1,6 @@
 spring:
   application:
-    name: iplatform-core
+    name: iplatform
   datasource:
     driverClassName: org.postgresql.Driver
     username: @db-username@
@@ -9,5 +9,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-  liquibase:
-    enabled: false

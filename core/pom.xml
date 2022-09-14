@@ -40,7 +40,7 @@
 		<profile>
 			<id>dev</id>
 			<properties>
-				<db-url>jdbc:postgresql://localhost:5432/iplatform_core</db-url>
+				<db-url>jdbc:postgresql://localhost:5432/iplatform</db-url>
 				<db-username>postgres</db-username>
 				<db-password>postgres</db-password>
 			</properties>
@@ -51,7 +51,7 @@
 		<profile>
 			<id>ref</id>
 			<properties>
-				<db-url>jdbc:postgresql://localhost:5432/iplatform_core</db-url>
+				<db-url>jdbc:postgresql://localhost:5432/iplatform</db-url>
 				<db-username>postgres</db-username>
 				<db-password>root</db-password>
 			</properties>
